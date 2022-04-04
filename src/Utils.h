@@ -20,7 +20,7 @@ inline float degreeToRadian(float angle)
 
 int static randomInt(int min, int max)
 {
-	srand(time(0));
+	//srand(time(0));
 	return (rand() % max) + min;//min + (std::rand() % (max - min + 1));
 }
 

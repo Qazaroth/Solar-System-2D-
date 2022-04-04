@@ -20,8 +20,8 @@ int main()
 {
 	settings.antialiasingLevel = 16;
 
-	Planet sun(100, 0);
-	sun.spawnChild(5);
+	Planet sun(75, 0);
+	sun.spawnChild(4, 1);
 	sf::RenderWindow window(dimension, title, styleFlag, settings);
 
 	sf::Vector2f windowSize(window.getSize().x, window.getSize().y);
@@ -35,7 +35,7 @@ int main()
 		sf::Event windowEvent;
 
 		window.clear(sf::Color(0, 0, 0, 255));
-		sun.show(window);
+		sun.show(window, new Planet());
 		sun.orbit();
 		window.display();
 

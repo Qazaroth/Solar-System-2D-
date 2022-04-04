@@ -11,17 +11,24 @@ private:
 	float distance = 0.0f;
 	float orbitSpeed = 0.0f;
 
+	bool isEmptyBool = false;
+
 	std::vector<Planet> planets;
+
+	sf::Vector2f position;
 
 	sf::Vector2f getPositionFromAngle();
 public:
-	Planet() {}
+	Planet() { this->isEmptyBool = true; }
 	Planet(float r, float d);
 	~Planet();
 
 	void orbit();
 
-	void spawnChild(int total);
-	void show(sf::RenderWindow &window);
+	void spawnChild(int total, int level);
+	void show(sf::RenderWindow &window, Planet *parent);
+
+	inline bool isEmpty() { return this->isEmptyBool; }
+	inline sf::Vector2f getPosition() { return position; }
 };
 
